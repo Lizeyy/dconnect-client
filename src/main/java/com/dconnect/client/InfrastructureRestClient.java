@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.validation.Valid;
 
-@FeignClient("dconnect-infrastructure")
+@FeignClient(url = "${feign.client.infrastructure.baseUrl}", name = "dconnect-infrastructure")
 public interface InfrastructureRestClient {
 
     @PostMapping({"/api/connection"})

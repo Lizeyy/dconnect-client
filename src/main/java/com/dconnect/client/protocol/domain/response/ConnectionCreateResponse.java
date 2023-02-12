@@ -11,6 +11,4 @@ public class ConnectionCreateResponse {
     private final static long serialVersionUID = -5126387785339817016L;
 
     private String name;
-
-    private String connectionId;
 }

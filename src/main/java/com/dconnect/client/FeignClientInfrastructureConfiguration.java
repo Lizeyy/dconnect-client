@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Configuration;
 @EnableFeignClients(clients = InfrastructureRestClient.class)
 public class FeignClientInfrastructureConfiguration {
 
-    @Value("${feign.client.config.infrastructure.connectTimeout}")
+    @Value("${feign.client.config.infrastructure.connectTimeout:300}")
     private Integer connectTimeout;
 
-    @Value("${feign.client.config.infrastructure.readTimeout}")
+    @Value("${feign.client.config.infrastructure.readTimeout:300}")
     private Integer readTimeout;
 
-    @Value("${feign.client.config.infrastructure.loggerLevel}")
+    @Value("${feign.client.config.infrastructure.loggerLevel:basic}")
     private String loggerLevel;
 }
