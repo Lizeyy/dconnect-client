@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration =\
+com.dconnect.client.FeignClientDiscordConfiguration,\
+com.dconnect.client.FeignClientInfrastructureConfiguration
