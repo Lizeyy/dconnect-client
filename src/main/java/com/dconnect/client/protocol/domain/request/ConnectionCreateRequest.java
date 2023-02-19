@@ -3,14 +3,16 @@ package com.dconnect.client.protocol.domain.request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serial;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ConnectionCreateRequest {
+public class ConnectionCreateRequest implements Serializable {
+    @Serial
     private final static long serialVersionUID = 7502498122339836740L;
 
     @NotNull
@@ -18,8 +20,6 @@ public class ConnectionCreateRequest {
 
     @NotNull
     private String creationBy;
-
-    private boolean conPrivate;
 
     @NotNull
     private String serverId;
