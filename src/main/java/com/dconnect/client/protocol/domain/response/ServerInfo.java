@@ -12,4 +12,6 @@ public class ServerInfo implements Serializable {
 
     private String id;
     private String name;
+    private String owner_id;
+    private String icon;
 }

@@ -1,3 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration =\
+com.dconnect.client.rabbitmq.RabbitMqConfiguration,\
+com.dconnect.client.rabbitmq.MessageQueueConfiguration,\
 com.dconnect.client.FeignClientDiscordConfiguration,\
 com.dconnect.client.FeignClientInfrastructureConfiguration
