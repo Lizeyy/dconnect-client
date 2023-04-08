@@ -1,13 +1,7 @@
 package com.dconnect.client;
 
-import com.dconnect.client.protocol.domain.request.ConnectionCreateRequest;
-import com.dconnect.client.protocol.domain.request.ConnectionJoinRequest;
-import com.dconnect.client.protocol.domain.request.InvitationRequest;
-import com.dconnect.client.protocol.domain.request.MessageRequest;
-import com.dconnect.client.protocol.domain.response.ConnectionCreateResponse;
-import com.dconnect.client.protocol.domain.response.ConnectionListOnServerResponse;
-import com.dconnect.client.protocol.domain.response.InvitationResponse;
-import com.dconnect.client.protocol.domain.response.ConnectionJoinResponse;
+import com.dconnect.client.protocol.domain.request.*;
+import com.dconnect.client.protocol.domain.response.*;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +16,9 @@ public interface InfrastructureRestClient {
     @PutMapping("/api/connection/join")
     ConnectionJoinResponse joinConnection(@Valid @RequestBody ConnectionJoinRequest request);
 
+    @PostMapping("/api/connection/quit")
+    ConnectionQuitResponse quitConnection(@Valid @RequestBody ConnectionQuitRequest request);
+
     @PostMapping("api/connection/add")
     InvitationResponse addConnection(@Valid @RequestBody InvitationRequest request);
 
@@ -30,6 +27,9 @@ public interface InfrastructureRestClient {
 
     @GetMapping("api/connection/{serverId}")
     ConnectionListOnServerResponse getConnectionListOnServerResponse(@PathVariable("serverId") String serverId);
+
+    @GetMapping("api/connection/servers/{channelId}")
+    ConnectionServersListResponse getConnectionServersListResponse(@PathVariable("channelId") String channelId);
 
     @PostMapping("api/message")
     void sendMessage(@Valid @RequestBody MessageRequest mess);
