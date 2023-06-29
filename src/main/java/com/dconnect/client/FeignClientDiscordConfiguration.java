@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Configuration;
 @EnableFeignClients(clients = DiscordRestClient.class)
 public class FeignClientDiscordConfiguration {
 
-    @Value("${feign.client.config.discord.connectTimeout}")
+    @Value("${feign.client.config.discord.connectTimeout:100}")
     private Integer connectTimeout;
 
-    @Value("${feign.client.config.discord.readTimeout}")
+    @Value("${feign.client.config.discord.readTimeout:500}")
     private Integer readTimeout;
 
-    @Value("${feign.client.config.discord.loggerLevel}")
+    @Value("${feign.client.config.discord.loggerLevel:basic}")
     private String loggerLevel;
 }
